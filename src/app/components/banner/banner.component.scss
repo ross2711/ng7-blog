@@ -1,5 +1,6 @@
-.text-white {
+.text-shadow {
     color: #fff!important;
+    text-shadow: 2px 2px #000000;
 }
 
 .p-3 {
@@ -29,3 +30,7 @@
     }
 }
 
+  .jumbotron {
+    background-image: url("../../../assets/images/main-image.png");
+    background-size: cover;
+  }
