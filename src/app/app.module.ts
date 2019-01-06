@@ -10,6 +10,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { AuthorComponent } from './components/author/author.component';
+// import { MatCardModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -19,12 +22,14 @@ import { ContactComponent } from './contact/contact.component';
     HeaderComponent,
     BannerComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    AuthorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule
+    // MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
