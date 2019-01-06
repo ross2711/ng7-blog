@@ -10,7 +10,6 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // document.body.classList.add('bg-img');
   }
 
 }

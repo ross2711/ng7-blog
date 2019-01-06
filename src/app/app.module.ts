@@ -16,10 +16,13 @@ import { SearchComponent } from './components/search/search.component';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BlogComponent } from './pages/blog/blog.component';
-import { PostComponent } from './components/post/post.component';
+import { PostComponent } from './pages/post/post.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { LatestPostsComponent } from './components/latest-posts/latest-posts.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { TagsComponent } from './components/tags/tags.component';
+import { PostFullComponent } from './components/post-full/post-full.component';
+import { PostIntroComponent } from './components/post-intro/post-intro.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { CategoriesComponent } from './components/categories/categories.componen
     PostComponent,
     PaginationComponent,
     LatestPostsComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    TagsComponent,
+    PostIntroComponent,
+    PostFullComponent
   ],
   imports: [
     BrowserModule,
