@@ -13,7 +13,7 @@ import { ContactComponent } from "./pages/contact/contact.component";
 import { AuthorComponent } from "./components/author/author.component";
 import { BlogsComponent } from "./components/blogs/blogs.component";
 import { SearchComponent } from "./components/search/search.component";
-import { MatFormFieldModule, MatInputModule } from "@angular/material";
+// import { MatFormFieldModule, MatInputModule } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BlogComponent } from "./pages/blog/blog.component";
 import { PostComponent } from "./pages/post/post.component";
@@ -23,6 +23,11 @@ import { CategoriesComponent } from "./components/categories/categories.componen
 import { TagsComponent } from "./components/tags/tags.component";
 import { PostFullComponent } from "./components/post-full/post-full.component";
 import { PostIntroComponent } from "./components/post-intro/post-intro.component";
+
+// Firebase
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { environment } from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -49,9 +54,11 @@ import { PostIntroComponent } from "./components/post-intro/post-intro.component
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    MatFormFieldModule,
-    MatInputModule,
-    BrowserAnimationsModule
+    // MatFormFieldModule,
+    // MatInputModule,
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
