@@ -13,7 +13,6 @@ import { ContactComponent } from "./pages/contact/contact.component";
 import { AuthorComponent } from "./components/author/author.component";
 import { BlogsComponent } from "./components/blogs/blogs.component";
 import { SearchComponent } from "./components/search/search.component";
-// import { MatFormFieldModule, MatInputModule } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BlogComponent } from "./pages/blog/blog.component";
 import { PostComponent } from "./pages/post/post.component";
@@ -54,8 +53,6 @@ import { environment } from "../environments/environment";
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    // MatFormFieldModule,
-    // MatInputModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
