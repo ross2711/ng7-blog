@@ -1,0 +1,68 @@
+<div
+  class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+>
+  <h1 class="h2">Posts List</h1>
+  <!-- It won't show if there is no post data -->
+  <a routerLink="/register-post" class="btn btn-success" *ngIf="hideWhenNoPost">
+    <i class="fas fa-plus custom-fa-plus"></i> Add Post
+  </a>
+</div>
+
+<div class="pricing-header mx-auto">
+  <!-- Preloader shows before the data loads-->
+  <div class="no-data text-center" *ngIf="preLoader">
+    <img src="assets/preloader.gif" class="preloader-icon" alt="No post" />
+  </div>
+
+  <!-- No data shows when their is no post data available -->
+  <div class="no-data text-center" *ngIf="noData">
+    <img src="assets/no-post.svg" class="nodata-msg" alt="No post" />
+    <p class="nodata-msg">No post added yet!</p>
+    <a routerLink="/register-post" class="btn btn-success">
+      <i class="fas fa-plus custom-fa-plus"></i> Add Post
+    </a>
+  </div>
+
+  <!-- Showing posts data -->
+  <div class="table-responsive" *ngIf="hideWhenNoPost">
+    <table
+      class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg"
+    >
+      <thead>
+        <tr>
+          <th scope="col">Post Id</th>
+          <th scope="col">Post name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Mobile number</th>
+          <th class="text-center" scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- *ngFor loop iterates over Post array and fetch the post's data -->
+        <!-- paginate pipe will add pagination in post's list, it won't show if items are less then 7 -->
+        <tr
+          *ngFor="
+            let post of (Post | paginate: { itemsPerPage: 7, currentPage: p });
+            let i = index
+          "
+        >
+          <th scope="row">{{ post.$key }}</th>
+          <td>{{ post.firstName }} {{ post.lastName }}</td>
+          <td>{{ post.email }}</td>
+          <td>{{ post.mobileNumber }}</td>
+          <td class="text-center action-block">
+            <!-- routerLink="/edit-post/{{post.$key}}" is refered to { path: 'edit-post/:id', component: EditPostComponent } in app-routing.moudles.ts -->
+            <i class="far fa-edit" routerLink="/edit-post/{{ post.$key }}"></i>
+            <i class="far fa-trash-alt" (click)="deletePost(post)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Pagination -->
+  <pagination-controls
+    (pageChange)="p = $event"
+    autoHide="true"
+    responsive="true"
+  ></pagination-controls>
+</div>

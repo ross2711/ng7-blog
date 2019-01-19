@@ -8,7 +8,7 @@ export const environment = {
     authDomain: "ng7-blog.firebaseapp.com",
     databaseURL: "https://ng7-blog.firebaseio.com",
     projectId: "ng7-blog",
-    storageBucket: "ng7-blog.appspot.com",
+    storageBucket: "ng7-blog.appspot.com"
   }
 };
 

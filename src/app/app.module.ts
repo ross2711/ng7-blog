@@ -1,5 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+// import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -23,10 +25,21 @@ import { TagsComponent } from "./components/tags/tags.component";
 import { PostFullComponent } from "./components/post-full/post-full.component";
 import { PostIntroComponent } from "./components/post-intro/post-intro.component";
 
-// Firebase
+// Toaster for Alert Messages
+import { ToastrModule } from "ngx-toastr";
+
+// NGX Pagination
+import { NgxPaginationModule } from "ngx-pagination";
+
+// Firebase Modules
 import { AngularFireModule } from "@angular/fire";
-import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { environment } from "../environments/environment";
+
+import { AdminComponent } from "./pages/admin/admin.component";
+import { AddPostComponent } from "./pages/admin/add-post/add-post.component";
+import { EditPostComponent } from "./pages/admin/edit-post/edit-post.component";
+import { PostsListComponent } from "./pages/admin/posts-list/posts-list.component";
 
 @NgModule({
   declarations: [
@@ -47,15 +60,27 @@ import { environment } from "../environments/environment";
     CategoriesComponent,
     TagsComponent,
     PostIntroComponent,
-    PostFullComponent
+    PostFullComponent,
+    AdminComponent,
+    AddPostComponent,
+    EditPostComponent,
+    PostsListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     NgbModule,
-    BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFireModule.initializeApp(environment.firebase), // Main Angular fire module
+    AngularFireDatabaseModule, // Firebase database module
+    BrowserAnimationsModule, // Required animations module for Toastr
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: "toast-bottom-right",
+      preventDuplicates: true
+    }),
+    NgxPaginationModule // NGX pagination module
   ],
   providers: [],
   bootstrap: [AppComponent]
