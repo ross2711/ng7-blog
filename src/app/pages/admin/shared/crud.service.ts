@@ -20,8 +20,8 @@ export class CrudService {
   // Create Post
   AddPost(post: Post) {
     this.postsRef.push({
-      firstName: post.firstName,
-      lastName: post.lastName,
+      postName: post.postName,
+      postDecription: post.postDecription,
       email: post.email,
       mobileNumber: post.mobileNumber
     });
@@ -42,8 +42,8 @@ export class CrudService {
   // Update Post Object
   UpdatePost(post: Post) {
     this.postRef.update({
-      firstName: post.firstName,
-      lastName: post.lastName,
+      postName: post.postName,
+      postDecription: post.postDecription,
       email: post.email,
       mobileNumber: post.mobileNumber
     });

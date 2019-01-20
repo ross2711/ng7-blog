@@ -4,7 +4,7 @@
   <h1 class="h2">Edit Post Details</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group">
-      <!-- goBack() methos to back to previous component -->
+      <!-- goBack() method to back to previous component -->
       <button class="btn btn-sm btn-outline-secondary" (click)="goBack()">
         Go Back
       </button>
@@ -24,14 +24,14 @@
                 <label>First name</label>
                 <input
                   type="text"
-                  formControlName="firstName"
+                  formControlName="postName"
                   class="form-control"
                   required
                 />
-                <p *ngIf="firstName.touched && firstName.invalid" class="error">
+                <p *ngIf="postName.touched && postName.invalid" class="error">
                   <sup>*</sup>Please enter first name
                 </p>
-                <p *ngIf="firstName.errors?.minlength" class="error">
+                <p *ngIf="postName.errors?.minlength" class="error">
                   <sup>*</sup>Name shouldn't be less than 2 words
                 </p>
               </div>

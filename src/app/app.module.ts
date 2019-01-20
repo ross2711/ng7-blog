@@ -1,7 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-// import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -40,6 +39,7 @@ import { AdminComponent } from "./pages/admin/admin.component";
 import { AddPostComponent } from "./pages/admin/add-post/add-post.component";
 import { EditPostComponent } from "./pages/admin/edit-post/edit-post.component";
 import { PostsListComponent } from "./pages/admin/posts-list/posts-list.component";
+import { SideNavComponent } from "./pages/admin/side-nav/side-nav.component";
 
 @NgModule({
   declarations: [
@@ -64,7 +64,8 @@ import { PostsListComponent } from "./pages/admin/posts-list/posts-list.componen
     AdminComponent,
     AddPostComponent,
     EditPostComponent,
-    PostsListComponent
+    PostsListComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,

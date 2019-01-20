@@ -34,12 +34,12 @@ export class EditPostComponent implements OnInit {
   }
 
   // Accessing form control using getters
-  get firstName() {
-    return this.editForm.get("firstName");
+  get postName() {
+    return this.editForm.get("postName");
   }
 
-  get lastName() {
-    return this.editForm.get("lastName");
+  get postDecription() {
+    return this.editForm.get("postDecription");
   }
 
   get email() {
@@ -53,8 +53,8 @@ export class EditPostComponent implements OnInit {
   // Contains Reactive Form logic
   updatePostData() {
     this.editForm = this.fb.group({
-      firstName: ["", [Validators.required, Validators.minLength(2)]],
-      lastName: [""],
+      postName: ["", [Validators.required, Validators.minLength(2)]],
+      postDecription: [""],
       email: [
         "",
         [
@@ -75,7 +75,7 @@ export class EditPostComponent implements OnInit {
   updateForm() {
     this.crudApi.UpdatePost(this.editForm.value); // Update post data using CRUD API
     this.toastr.success(
-      this.editForm.controls["firstName"].value + " updated successfully"
+      this.editForm.controls["postName"].value + " updated successfully"
     ); // Show succes message when data is successfully submited
     this.router.navigate(["view-posts"]); // Navigate to post's list page when post data is updated
   }

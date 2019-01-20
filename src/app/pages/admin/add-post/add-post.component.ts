@@ -31,8 +31,8 @@ export class AddPostComponent implements OnInit {
   // Reactive post form
   studenForm() {
     this.postForm = this.fb.group({
-      firstName: ["", [Validators.required, Validators.minLength(2)]],
-      lastName: [""],
+      postName: ["", [Validators.required, Validators.minLength(2)]],
+      postDecription: [""],
       email: [
         "",
         [
@@ -45,12 +45,12 @@ export class AddPostComponent implements OnInit {
   }
 
   // Accessing form control using getters
-  get firstName() {
-    return this.postForm.get("firstName");
+  get postName() {
+    return this.postForm.get("postName");
   }
 
-  get lastName() {
-    return this.postForm.get("lastName");
+  get postDecription() {
+    return this.postForm.get("postDecription");
   }
 
   get email() {
@@ -69,7 +69,7 @@ export class AddPostComponent implements OnInit {
   submitPostData() {
     this.crudApi.AddPost(this.postForm.value); // Submit post data using CRUD API
     this.toastr.success(
-      this.postForm.controls["firstName"].value + " successfully added!"
+      this.postForm.controls["postName"].value + " successfully added!"
     ); // Show success message when data is successfully submited
     this.ResetForm(); // Reset form when clicked on reset button
   }

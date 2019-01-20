@@ -12,23 +12,27 @@
     <div class="col-lg-5 col-md-12 col-sm-12">
       <div class="row">
         <div class="col-md-12 mb-3">
-          <label>First name</label>
+          <label>Post name</label>
           <input
             type="text"
-            formControlName="firstName"
+            formControlName="postName"
             class="form-control"
             required
           />
-          <p *ngIf="firstName.touched && firstName.invalid" class="error">
-            <sup>*</sup>Please enter atleast first name
+          <p *ngIf="postName.touched && postName.invalid" class="error">
+            <sup>*</sup>Prompt
           </p>
-          <p *ngIf="firstName.errors?.minlength" class="error">
-            <sup>*</sup>Name shouldn't be less than 2 words
+          <p *ngIf="postName.errors?.minlength" class="error">
+            <sup>*</sup>Post shouldn't be less than 2 letters
           </p>
         </div>
         <div class="col-md-12 mb-3">
-          <label>Last name</label>
-          <input type="text" formControlName="lastName" class="form-control" />
+          <label>Intro</label>
+          <input
+            type="text"
+            formControlName="postDecription"
+            class="form-control"
+          />
         </div>
       </div>
       <div class="row">

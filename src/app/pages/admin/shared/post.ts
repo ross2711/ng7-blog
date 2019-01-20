@@ -1,8 +1,8 @@
 // Interface Class
 export interface Post {
   $key: string;
-  firstName: string;
-  lastName: string;
+  postName: string;
+  postDecription: string;
   email: string;
   mobileNumber: Number;
 }

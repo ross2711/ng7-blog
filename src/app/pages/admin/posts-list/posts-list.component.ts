@@ -56,7 +56,7 @@ export class PostsListComponent implements OnInit {
     if (window.confirm("Are sure you want to delete this post ?")) {
       // Asking from user before Deleting post data.
       this.crudApi.DeletePost(post.$key); // Using Delete post API to delete post.
-      this.toastr.success(post.firstName + " successfully deleted!"); // Alert message will show up when post successfully deleted.
+      this.toastr.success(post.postName + " successfully deleted!"); // Alert message will show up when post successfully deleted.
     }
   }
 }
